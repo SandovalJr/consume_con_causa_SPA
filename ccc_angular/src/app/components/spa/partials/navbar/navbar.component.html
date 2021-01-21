@@ -1,0 +1,75 @@
+<div class="fixed-top">
+  <mdb-navbar
+    SideClass="navbar navbar-expand-lg navbar-dark bg-primary"
+    [containerInside]="false"
+  >
+    <mdb-navbar-brand
+      ><a class="navbar-brand" href="#"
+        ><img
+          class="img"
+          src="../../../../../assets/navbar_logo.png"
+          alt="" /></a
+    ></mdb-navbar-brand>
+
+    <links>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect href="#Inicio"
+            ><mdb-icon fas icon="home"></mdb-icon> Inicio</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect
+            ><mdb-icon fas icon="store"></mdb-icon> Tienda</a
+          >
+        </li>
+
+        <li class="nav-item dropdown" dropdown>
+          <a
+            dropdownToggle
+            mdbWavesEffect
+            type="button"
+            class="nav-link dropdown-toggle waves-light"
+            mdbWavesEffect
+          >
+            <mdb-icon fas icon="plus-circle"></mdb-icon> Registrate<span
+              class="caret"
+            ></span
+          ></a>
+          <div
+            *dropdownMenu
+            class="dropdown-menu dropdown-menu-right dropdown dropdown-primary"
+            role="menu"
+          >
+            <a
+              class="dropdown-item waves-light"
+              mdbWavesEffect
+              (click)="RegistroCliente()"
+              >Cliente</a
+            >
+            <a
+              class="dropdown-item waves-light"
+              mdbWavesEffect (click)="EmpresaRegistro()"
+              >Empresa</a
+            >
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            dropdownToggle
+            mdbWavesEffect
+            type="button"
+            class="nav-link waves-light"
+            mdbWavesEffect
+            routerLink="../LogIn"
+          >
+            <mdb-icon fas icon="user"></mdb-icon> Log In<span
+              class="caret"
+            ></span
+          ></a>
+        </li>
+      </ul>
+    </links>
+  </mdb-navbar>
+  <div class="rv"></div>
+</div>

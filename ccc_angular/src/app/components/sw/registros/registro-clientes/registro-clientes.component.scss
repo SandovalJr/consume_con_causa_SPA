@@ -1,0 +1,47 @@
+.titulo {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: bold;
+  font-size: 55px;
+  margin-top: 120px;
+}
+.centrartodo {
+  width: 100%;
+  // display: flex;
+}
+.centlineas {
+  display: flex;
+  justify-content: center;
+}
+
+.la {
+  margin-top: 10px;
+  width: 400px;
+  height: 5px;
+  background: #4285f4;
+  display: block;
+}
+.lv {
+  margin-top: 10px;
+  width: 300px;
+  height: 5px;
+  background: #15c76f;
+  display: block;
+}
+
+.margenform {
+  margin-top: 100px;
+}
+.centrarbtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media (max-width: 281px) {
+  .titulo{
+    font-size: 40px;
+
+  }
+
+}

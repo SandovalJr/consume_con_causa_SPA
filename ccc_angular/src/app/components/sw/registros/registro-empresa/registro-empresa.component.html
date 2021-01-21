@@ -1,0 +1,451 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="centrartodo">
+    <p class="p-responsive titulo text-center">Registra tu empresa</p>
+    <div class="centlineas">
+      <div class="la"></div>
+    </div>
+    <div class="centlineas">
+      <div class="lv"></div>
+    </div>
+  </div>
+  <!-- Extended material form grid -->
+  <form>
+    <ng-container [formGroup]="formulario">
+      <!-- Grid row -->
+      <div class="form-row margenform">
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              id="inputNombre4MD"
+              placeholder="Nombre"
+              formControlName="nombre"
+              [(ngModel)]="credentialsEmpresa.nombre"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('nombre').error == false,
+                'is-invalid': ValidarFormulario('nombre').error == true
+              }"
+            />
+            <label for="inputNombre4MD">Nombre</label>
+            <div
+              *ngIf="ValidarFormulario('nombre').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("nombre").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              id="inputApellidos4MD"
+              placeholder="Organizacion"
+              formControlName="apellidos"
+              [(ngModel)]="credentialsEmpresa.apellidos"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('apellidos').error == false,
+                'is-invalid': ValidarFormulario('apellidos').error == true
+              }"
+            />
+            <label for="inputApellidos4MD"
+              >Organizacion a la que perteneces</label
+            >
+            <div
+              *ngIf="ValidarFormulario('apellidos').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("apellidos").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+
+      <!-- Grid row -->
+      <div class="form-row">
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              placeholder="Telefono"
+              formControlName="telefono"
+              [(ngModel)]="credentialsEmpresa.telefono"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('telefono').error == false,
+                'is-invalid': ValidarFormulario('telefono').error == true
+              }"
+            />
+            <label>Telefono</label>
+            <div
+              *ngIf="ValidarFormulario('telefono').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("telefono").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="email"
+              class="form-control"
+              id="inputEmailMD"
+              placeholder="Email"
+              formControlName="correo"
+              [(ngModel)]="credentialsEmpresa.correo"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('correo').error == false,
+                'is-invalid': ValidarFormulario('correo').error == true
+              }"
+            />
+            <label>Email</label>
+            <div
+              *ngIf="ValidarFormulario('correo').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("correo").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+      <!-- Grid row -->
+      <div class="form-row">
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              placeholder="Nombre de la empresa"
+              formControlName="nombre_empresa"
+              [(ngModel)]="credentialsEmpresa.nombre_empresa"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('nombre_empresa').error == false,
+                'is-invalid': ValidarFormulario('nombre_empresa').error == true
+              }"
+            />
+            <label>Nombre de la empresa</label>
+          </div>
+          <div
+            *ngIf="ValidarFormulario('nombre_empresa').error"
+            class="text-center invalid-feedback d-block"
+          >
+            {{ ValidarFormulario("nombre_empresa").message }}
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <select
+              class="browser-default custom-select"
+              formControlName="giro_empresa"
+              [(ngModel)]="credentialsEmpresa.giro_empresa"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('giro_empresa').error == false,
+                'is-invalid': ValidarFormulario('giro_empresa').error == true
+              }"
+            >
+              <option selected>Selecciona el giro de tu empresa</option>
+              <option value="Juguetes">Juguetes</option>
+              <option value="Tecnologia">Tecnologia</option>
+            </select>
+            <div
+              *ngIf="ValidarFormulario('giro_empresa').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("giro_empresa").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+      </div>
+
+      <!-- Grid row -->
+      <div class="form-row">
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              placeholder="Dirección"
+              formControlName="direccion"
+              [(ngModel)]="credentialsEmpresa.direccion"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('direccion').error == false,
+                'is-invalid': ValidarFormulario('direccion').error == true
+              }"
+            />
+            <label>Dirección</label>
+            <div
+              *ngIf="ValidarFormulario('direccion').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("direccion").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              placeholder="Codigo Postal"
+              formControlName="cp"
+              [(ngModel)]="credentialsEmpresa.cp"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('cp').error == false,
+                'is-invalid': ValidarFormulario('cp').error == true
+              }"
+            />
+            <label>Codigo Postal</label>
+          </div>
+          <div
+          *ngIf="ValidarFormulario('cp').error"
+          class="text-center invalid-feedback d-block"
+        >
+          {{ ValidarFormulario("cp").message }}
+        </div>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <div class="form-row">
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              placeholder="Ciudad"
+              formControlName="ciudad"
+              [(ngModel)]="credentialsEmpresa.ciudad"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('ciudad').error == false,
+                'is-invalid': ValidarFormulario('ciudad').error == true
+              }"
+            />
+            <label>Ciudad</label>
+            <div
+              *ngIf="ValidarFormulario('ciudad').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("ciudad").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              placeholder="RFC"
+              formControlName="rfc"
+              [(ngModel)]="credentialsEmpresa.rfc"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('rfc').error == false,
+                'is-invalid': ValidarFormulario('rfc').error == true
+              }"
+            />
+            <label>RFC (Opcional)</label>
+            <div
+              *ngIf="ValidarFormulario('rfc').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("rfc").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <div class="form-row">
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              placeholder="Ingresa la url de tu pagina de facebook"
+              formControlName="link_fb"
+              [(ngModel)]="credentialsEmpresa.link_fb"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('link_fb').error == false,
+                'is-invalid': ValidarFormulario('link_fb').error == true
+              }"
+            />
+            <label>Facebook (url opcional)</label>
+            <div
+              *ngIf="ValidarFormulario('link_fb').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("link_fb").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              placeholder="Ingresa el numero de whatsapp"
+              formControlName="link_whatsapp"
+              [(ngModel)]="credentialsEmpresa.link_whatsapp"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('link_whatsapp').error == false,
+                'is-invalid': ValidarFormulario('link_whatsapp').error == true
+              }"
+            />
+            <label>Whatsapp (opcional)</label>
+            <div
+              *ngIf="ValidarFormulario('link_whatsapp').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("link_whatsapp").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <div class="form-row">
+        <!-- Grid column -->
+        <div class="col-md">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              formControlName="password"
+              [(ngModel)]="credentialsEmpresa.password"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('password').error == false,
+                'is-invalid': ValidarFormulario('password').error == true
+              }"
+            />
+            <label>Password</label>
+            <div
+              *ngIf="ValidarFormulario('password').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("password").message }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="md-form col-12">
+          <textarea
+            type="text"
+            id="form10"
+            class="md-textarea form-control"
+            mdbInput
+            formControlName="descripcion"
+            [(ngModel)]="credentialsEmpresa.descripcion"
+            [ngClass]="{
+              'is-valid': ValidarFormulario('descripcion').error == false,
+              'is-invalid': ValidarFormulario('descripcion').error == true
+            }"
+          ></textarea>
+          <label for="form7">Descripción empresa</label>
+          <div
+            *ngIf="ValidarFormulario('descripcion').error"
+            class="text-center invalid-feedback d-block"
+          >
+            {{ ValidarFormulario("descripcion").message }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-6">
+          <!-- Material input -->
+          <label>Agrega el logo de tu empresa</label>
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="file"
+              class="form-control"
+              formControlName="imagen"
+              [(ngModel)]="credentialsEmpresa.imagen"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('imagen').error == false,
+                'is-invalid': ValidarFormulario('imagen').error == true
+              }"
+            />
+          </div>
+          <div
+            *ngIf="ValidarFormulario('imagen').error"
+            class="text-center invalid-feedback d-block"
+          >
+            {{ ValidarFormulario("imagen").message }}
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <!-- Grid row -->
+    <div class="centrarbtn">
+      <button
+        mdbBtn
+        type="submit"
+        gradient="aqua"
+        rounded="true"
+        mdbWavesEffect
+        (click)="registroEmpresa()"
+      >
+        Registrar
+      </button>
+    </div>
+  </form>
+  <!-- Extended material form grid -->
+</div>
+<app-footer></app-footer>

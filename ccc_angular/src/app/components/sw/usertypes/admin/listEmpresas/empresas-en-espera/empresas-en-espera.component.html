@@ -1,0 +1,105 @@
+<div class="centrartodo">
+  <p class="p-responsive titulo text-center">Empresas En Espera</p>
+  <div class="centlineas">
+    <div class="la"></div>
+  </div>
+  <div class="centlineas">
+    <div class="lv"></div>
+  </div>
+</div>
+
+<div *ngIf="!loading" class="contenedorload">
+  <div class="spinner-grow text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-success" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-success" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="loading" class="form-inline md-form form-sm centrar">
+  <span class="iconColor">
+    <mdb-icon
+      fas
+      icon="search"
+      style="color: white"
+      aria-hidden="true"
+    ></mdb-icon>
+  </span>
+  <input
+    [(ngModel)]="Buscador_Empresas"
+    class="form-control form-control-sm ml-3 w-75"
+    type="text"
+    placeholder="Buscar"
+    aria-describedby="helpId"
+    aria-label="Search"
+    mdbInput
+  />
+</div>
+
+<div class="container">
+  <div class="table-responsive mt-5" *ngIf="loading">
+    <table class="table">
+      <thead>
+        <tr class="ttabla">
+          <th>Imagen</th>
+          <th>Nombre de la Empresa</th>
+          <th>Organizacion</th>
+          <th>Giro Empresarial</th>
+          <th>Correo</th>
+          <th class="operaciones">Operaciones</th>
+        </tr>
+      </thead>
+      <tbody hover="true">
+        <tr
+          appTablehover
+          *ngFor="
+            let empresa of EmpresasAceptadas
+              | filter: Buscador_Empresas
+              | paginate: { itemsPerPage: 5, currentPage: pageActual }
+          "
+        >
+          <td class="tc"><img class="imgMedida" src="../../../../../../../assets/logo.png" alt=""></td>
+          <td class="tc">{{ empresa.nombre_empresa }}</td>
+          <td class="tc">{{ empresa.apellidos }}</td>
+          <td class="tc">{{ empresa.giro_empresa }}</td>
+          <td class="tc">{{ empresa.correo }}</td>
+          <td class="operacionesBoton">
+            <button
+              class="btn btn-outline-success mt-2"
+              (click)="aprobarEmpresa(empresa.id_empresa)"
+            >
+              <mat-icon>check_circle_outline </mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="loading" class="mt-4 float-right">
+      <pagination-controls
+        (pageChange)="pageActual = $event"
+        previousLabel="Anterior"
+        nextLabel="Siguiente"
+      ></pagination-controls>
+    </div>
+  </div>
+</div>

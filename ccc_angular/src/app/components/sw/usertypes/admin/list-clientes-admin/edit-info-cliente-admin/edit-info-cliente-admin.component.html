@@ -1,0 +1,213 @@
+<div class="container">
+  <div class="centrartodo">
+    <p class="p-responsive titulo text-center">Actualizar Cliente</p>
+    <div class="centlineas">
+      <div class="la"></div>
+    </div>
+    <div class="centlineas">
+      <div class="lv"></div>
+    </div>
+  </div>
+  <!-- Extended material form grid -->
+  <form>
+    <ng-container [formGroup]="formulario">
+      <!-- Grid row -->
+      <div class="form-row margenform">
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              id="inputNombre4MD"
+              placeholder="Nombre"
+              name="nombre"
+              formControlName="nombre"
+              [(ngModel)]="crendentialsRegister_Clientes.nombre"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('nombre').error == false,
+                'is-invalid': ValidarFormulario('nombre').error == true
+              }"
+            />
+            <label for="inputNombre4MD">Nombre</label>
+            <div
+              *ngIf="ValidarFormulario('nombre').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("nombre").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              id="inputApellidos4MD"
+              placeholder="Apellidos"
+              name="apellidos"
+              formControlName="apellidos"
+              [(ngModel)]="crendentialsRegister_Clientes.apellidos"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('apellidos').error == false,
+                'is-invalid': ValidarFormulario('apellidos').error == true
+              }"
+            />
+            <label for="inputApellidos4MD">Apellidos</label>
+            <div
+              *ngIf="ValidarFormulario('apellidos').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("apellidos").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+
+      <!-- Grid row -->
+      <div class="form-row">
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              class="form-control"
+              id="inputTelefonoMD"
+              placeholder="Telefono"
+              name="telefono"
+              formControlName="telefono"
+              [(ngModel)]="crendentialsRegister_Clientes.telefono"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('telefono').error == false,
+                'is-invalid': ValidarFormulario('telefono').error == true
+              }"
+            />
+            <label for="inputTelefonoMD">Telefono</label>
+            <div
+              *ngIf="ValidarFormulario('telefono').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("telefono").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="email"
+              class="form-control"
+              id="inputEmailMD"
+              placeholder="Email"
+              name="correo"
+              formControlName="correo"
+              [(ngModel)]="crendentialsRegister_Clientes.correo"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('correo').error == false,
+                'is-invalid': ValidarFormulario('correo').error == true
+              }"
+            />
+            <label for="inputEmailMD">Email</label>
+            <div
+              *ngIf="ValidarFormulario('correo').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("correo").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+      <!-- Grid row -->
+      <div class="form-row">
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="date"
+              class="form-control"
+              id="inputTelefonoMD"
+              name="fecha_de_nacimiento"
+              formControlName="fecha_de_nacimiento"
+              [(ngModel)]="crendentialsRegister_Clientes.fecha_de_nacimiento"
+              [ngClass]="{
+                'is-valid':
+                  ValidarFormulario('fecha_de_nacimiento').error == false,
+                'is-invalid':
+                  ValidarFormulario('fecha_de_nacimiento').error == true
+              }"
+            />
+            <label for="inputTelefonoMD">Fecha de Nacimiento</label>
+            <div
+              *ngIf="ValidarFormulario('fecha_de_nacimiento').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("fecha_de_nacimiento").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+        <div class="col-md-6">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input
+              mdbInput
+              type="text"
+              placeholder="Password"
+              class="form-control"
+              id="inputTelefonoMD"
+              name="password"
+              formControlName="password"
+              [(ngModel)]="crendentialsRegister_Clientes.password"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('password').error == false,
+                'is-invalid': ValidarFormulario('password').error == true
+              }"
+            />
+            <label for="inputTelefonoMD">Password</label>
+            <div
+              *ngIf="ValidarFormulario('password').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("password").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Grid column -->
+      </div>
+    </ng-container>
+
+    <!-- Grid row -->
+    <div class="centrarbtn">
+      <button
+        mdbBtn
+        type="button"
+        gradient="aqua"
+        rounded="true"
+        mdbWavesEffect
+        (click)="actualizarClient()"
+      >
+        Actualizar
+      </button>
+    </div>
+  </form>
+  <!-- Extended material form grid -->
+</div>

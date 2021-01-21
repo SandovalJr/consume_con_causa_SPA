@@ -1,0 +1,86 @@
+<div
+  class="example-container"
+  [class.example-is-mobile]="mobileQuery.matches"
+  *ngIf="shouldRun"
+>
+  <mat-toolbar class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span id="imagen_menu"
+      ><img
+        src="../../../../../../assets/navbar_logo.png"
+        class="img-responsive ml-4 mr-5"
+        alt="Emurcia"
+    /></span>
+
+    <!-- BOTON DERECHA -->
+    <button
+      mat-icon-button
+      id="btnDer"
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item >
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>Sandoval </span>
+      </button>
+      <button mat-menu-item routerLink="Home">
+        <mat-icon>logout </mat-icon>
+        <span>Log Out</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+  <div id="ln"></div>
+  <mat-sidenav-container
+    class="example-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+  >
+    <mat-sidenav
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+    >
+      <mat-nav-list>
+        <a
+          mat-list-item
+          [routerLink]="nav.route"
+          class="BtnSideNav"
+          *ngFor="let nav of fillerNav"
+        >
+          <mat-icon class="icono">{{ nav.icon }}</mat-icon>
+          {{ nav.name }}</a
+        >
+        <!-- Transporte -->
+        <!-- <p mat-list-item class="TSideNav">Transporte</p> -->
+        <a class="BtnSideNav" mat-list-item routerLink="Home">
+          <mat-icon class="icono">directions_car</mat-icon>
+          <span> Unidades / Autos</span>
+        </a>
+
+        <!-- <p mat-list-item class="TSideNav">Reportes</p> -->
+
+        <!-- LogOut -->
+
+        <a class="BtnSideNav" mat-list-item routerLink="Home">
+          <mat-icon class="icono">logout </mat-icon>
+          <span>Log Out</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>

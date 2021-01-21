@@ -1,0 +1,134 @@
+#color2 > #colorTest > #body > span > #imgbody  {
+  width:100%;
+  height:80vh;
+ display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#color2 > #colorTest > #body > span > #imgbody > img  {
+ width:250px;
+ height:200px
+}
+#color2 > #colorTest > #body > span > #imgbody > img:hover  {
+filter: saturate(180%)}
+
+#imagenInicio {
+  height: 100vh;
+  // background-image: url("../../../../../assets/colorful-gradient-diagonal-geometric-shape-background.jpg");
+  background: #f2f2f2f2;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+// parte gris del logo
+#pglg {
+  display: block;
+  position: absolute;
+  margin-top: 19px;
+  width: 40%;
+  height: 88.5vh;
+  background: rgba(0, 0, 0, 0.377);
+  border-radius: 3px;
+}
+
+#logoInicio {
+  width: 100%;
+  height: 88.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+#color2 {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0), #A5C7FF ,#A5C7FF);
+}
+
+#color2 > #colorTest > #body {
+  width: 100%;
+  height: 80vh;
+  display: block;
+}
+
+
+
+
+
+
+#colorTest {
+  animation: bgColors 10s infinite alternate both;
+}
+
+// Ipad
+@media (max-width: 768px) {
+  #pglg {
+    margin-top: 81px;
+  }
+  #logoInicio > img {
+    width: 250px;
+    height: 180px;
+  }
+}
+
+// IPHONE 414px
+@media (max-width: 414px) {
+  #pglg {
+    margin-top: 74px;
+    width: 100%;
+  }
+  #logoInicio > img {
+    width: 300px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 375px) {
+  #pglg {
+    margin-top: 65px;
+    height: 90vh;
+  }
+}
+
+@media (max-width: 375px) {
+  #logoInicio > img {
+    width: 250px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 375px) {
+  // parte gris del logo
+  #pglg {
+    height: 87vh;
+  }
+}
+
+
+
+
+
+@keyframes bgColors {
+  0% {
+    background: #A5C7FF;
+  }
+  25% {
+    opacity: 0.9;
+    background: #6e91ca;
+  }
+  50% {
+    opacity: 0.9;
+
+    background: #A5C7FF;
+  }
+  75% {
+    opacity: 0.9;
+    background: #6e91ca;
+  }
+  100% {
+    opacity: 0.9;
+    background: #A5C7FF;
+  }
+}

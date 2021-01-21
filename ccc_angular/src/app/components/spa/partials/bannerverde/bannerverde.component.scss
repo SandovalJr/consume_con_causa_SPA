@@ -1,0 +1,49 @@
+.bannerverde {
+  width: 100%;
+  height: 210px;
+  background: #15c76f;
+}
+.cimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgblock {
+  display: block;
+}
+
+.apo {
+  text-align: center;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 40px;
+}
+
+@media (max-width: 1025px) {
+  .apo {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 769px) {
+  .apo {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 541px) {
+  .apo {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 361px) {
+  .apo {
+    font-size: 20px;
+  }
+}
+@media (max-width: 281px) {
+  .apo {
+    font-size: 18px;
+  }
+}
