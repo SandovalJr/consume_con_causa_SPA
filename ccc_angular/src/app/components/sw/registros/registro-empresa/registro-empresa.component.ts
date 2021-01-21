@@ -13,6 +13,7 @@ import {
   FormGroup,
 } from "@angular/forms";
 import { Router } from "@angular/router";
+import { ImageService } from '../../../../services/image.service';
 
 import {
   RxwebValidators,
@@ -48,10 +49,14 @@ export class RegistroEmpresaComponent implements OnInit {
     password: "",
   };
 
+  private imgSubir;
+  public idEmpresa: any;
+
   constructor(
     private router: Router,
     private registerService: RegisterService,
-    private MessageErrorSvr: MessageErrorsService
+    private MessageErrorSvr: MessageErrorsService,
+    private imageService: ImageService
   ) {}
 
   ngOnInit(): void {
@@ -93,12 +98,16 @@ export class RegistroEmpresaComponent implements OnInit {
     console.log("Empresa Registrada", this.formulario.value);
     if (this.formulario.valid) {
       this.registerService.registroEmpresa(this.formulario.value).subscribe(
-        (resp) => {
+        (resp: any) => {
           Swal.fire(
             "Registro Completo",
             "Espera la validacion de tu empresa",
             "success"
           );
+          this.idEmpresa = resp.empresa.id_empresa;
+          this.imageService
+            .AddImage(this.imgSubir, 'empresa', this.idEmpresa)
+            .subscribe();
           this.router.navigateByUrl(``);
         },
         (err) => {
@@ -108,5 +117,10 @@ export class RegistroEmpresaComponent implements OnInit {
     } else {
       Swal.fire("Campos Incompletos", "Valida Informacion", "info");
     }
+  }
+
+  public cambiarImagen(file: File){
+    console.log(file);
+    this.imgSubir = file;
   }
 }

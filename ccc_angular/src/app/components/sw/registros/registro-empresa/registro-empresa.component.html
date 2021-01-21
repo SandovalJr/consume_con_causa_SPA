@@ -421,6 +421,7 @@
                 'is-valid': ValidarFormulario('imagen').error == false,
                 'is-invalid': ValidarFormulario('imagen').error == true
               }"
+              (change)="cambiarImagen($event.target.files[0])"
             />
           </div>
           <div
