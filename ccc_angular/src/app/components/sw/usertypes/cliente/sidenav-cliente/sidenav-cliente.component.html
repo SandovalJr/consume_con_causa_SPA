@@ -24,13 +24,13 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
+      <button mat-menu-item  (click)="goToInicio()">
         <mat-icon>home</mat-icon>
         <span>Home</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item (click)="goToProfile()">
         <mat-icon>person</mat-icon>
-        <span>Sandoval </span>
+        <span>{{this.inforCliente}}</span>
       </button>
       <button mat-menu-item routerLink="Home">
         <mat-icon>logout </mat-icon>

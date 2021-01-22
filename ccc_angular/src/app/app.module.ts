@@ -65,6 +65,7 @@ import { ComprasPagadasClientComponent } from './components/sw/usertypes/cliente
 import { ComprasNOPagadasClientComponent } from './components/sw/usertypes/cliente/compras-nopagadas-client/compras-nopagadas-client.component';
 import { DonacionPagadaClienteComponent } from './components/sw/usertypes/cliente/donacion-pagada-cliente/donacion-pagada-cliente.component';
 import { DonacionNOPagadaClienteComponent } from './components/sw/usertypes/cliente/donacion-nopagada-cliente/donacion-nopagada-cliente.component';
+import { PerfilClienteComponent } from './components/sw/usertypes/cliente/perfil-cliente/perfil-cliente.component';
 
 @NgModule({
   declarations: [
@@ -121,6 +122,8 @@ import { DonacionNOPagadaClienteComponent } from './components/sw/usertypes/clie
     DonacionPagadaClienteComponent,
 
     DonacionNOPagadaClienteComponent,
+
+    PerfilClienteComponent,
 
   ],
   imports: [
