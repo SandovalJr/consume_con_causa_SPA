@@ -1,3 +1,8 @@
+*{
+  overflow-x: hidden !important;
+}
+
+
 #color2 > #colorTest > #body > span > #imgbody  {
   width:100%;
   height:80vh;
@@ -6,11 +11,12 @@
   justify-content: center;
 }
 #color2 > #colorTest > #body > span > #imgbody > img  {
- width:250px;
- height:200px
+ width:390px;
+ height:330px
 }
-#color2 > #colorTest > #body > span > #imgbody > img:hover  {
-filter: saturate(180%)}
+#color2 > #colorTest > #body > span > #imgbody > img  {
+filter: saturate(250%)
+}
 
 #imagenInicio {
   height: 100vh;
@@ -44,7 +50,8 @@ filter: saturate(180%)}
 #color2 {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0), #A5C7FF ,#A5C7FF);
+  background-image: url('../../../../../assets/EC.jpg') !important;
+  // background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0), #A5C7FF ,#A5C7FF);
 }
 
 #color2 > #colorTest > #body {
@@ -58,9 +65,9 @@ filter: saturate(180%)}
 
 
 
-#colorTest {
-  animation: bgColors 10s infinite alternate both;
-}
+// #colorTest {
+//   animation: bgColors 10s infinite alternate both;
+// }
 
 // Ipad
 @media (max-width: 768px) {
@@ -71,6 +78,16 @@ filter: saturate(180%)}
     width: 250px;
     height: 180px;
   }
+}
+
+
+@media (max-width: 541px) {
+  #color2 > #colorTest > #body > span > #imgbody > img  {
+    width:300px;
+    height:280px
+   }
+
+
 }
 
 // IPHONE 414px
@@ -92,43 +109,53 @@ filter: saturate(180%)}
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 376px) {
   #logoInicio > img {
-    width: 250px;
+    width: 50px;
     height: 180px;
   }
+
+
+}
+@media (max-width: 281px) {
+  #color2 > #colorTest > #body > span > #imgbody > img  {
+    width:200px;
+    height:180px
+   }
+
+
 }
 
-@media (max-width: 375px) {
-  // parte gris del logo
-  #pglg {
-    height: 87vh;
-  }
-}
+// @media (max-width: 375px) {
+//   // parte gris del logo
+//   #pglg {
+//     height: 87vh;
+//   }
+// }
 
 
 
 
 
-@keyframes bgColors {
-  0% {
-    background: #A5C7FF;
-  }
-  25% {
-    opacity: 0.9;
-    background: #6e91ca;
-  }
-  50% {
-    opacity: 0.9;
+// @keyframes bgColors {
+//   0% {
+//     background: #A5C7FF;
+//   }
+//   25% {
+//     opacity: 0.9;
+//     background: #6e91ca;
+//   }
+//   50% {
+//     opacity: 0.9;
 
-    background: #A5C7FF;
-  }
-  75% {
-    opacity: 0.9;
-    background: #6e91ca;
-  }
-  100% {
-    opacity: 0.9;
-    background: #A5C7FF;
-  }
-}
+//     background: #A5C7FF;
+//   }
+//   75% {
+//     opacity: 0.9;
+//     background: #6e91ca;
+//   }
+//   100% {
+//     opacity: 0.9;
+//     background: #A5C7FF;
+//   }
+// }
