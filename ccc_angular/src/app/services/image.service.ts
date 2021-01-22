@@ -20,7 +20,7 @@ export class ImageService {
 
     console.log('Imagen');
 
-    return this.http.put(
+    return this.http.post(
       `${this.baseUrl}/${tipoImg}/${id}`,
       formData
     )

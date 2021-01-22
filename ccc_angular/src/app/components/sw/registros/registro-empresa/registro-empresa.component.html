@@ -422,6 +422,7 @@
                 'is-invalid': ValidarFormulario('imagen').error == true
               }"
               (change)="cambiarImagen($event.target.files[0])"
+              accept="image/png , .jpeg, .jpg , image/gif"
             />
           </div>
           <div

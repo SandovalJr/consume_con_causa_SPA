@@ -36,6 +36,8 @@ const uploadImg = (req, res = response) => {
 
     const file = req.files.imagen;
 
+    console.log('FILE', req.files);
+
     const nombreCortado = file.name.split('.');
     const extencionArchivo = nombreCortado[nombreCortado.length - 1];
 
@@ -50,6 +52,14 @@ const uploadImg = (req, res = response) => {
     const nombreArchivo = `${uuidv4()}.${extencionArchivo}`;
 
     const path = `./uploads/${tipo}/${nombreArchivo}`;
+
+    cloudinary.uploader.upload(file.tempFilePath, {public_id:  `Causa/empresa/${nombreArchivo}`, tags: `blog`}, 
+        function(err, image){
+            if(err) res.send(err);
+            console.log('File upload with cloudinary');
+            res.json(image);
+        }
+    );
     
     file.mv(path, (err) => {
         if(err){
@@ -62,11 +72,11 @@ const uploadImg = (req, res = response) => {
 
         actualizarImagen(tipo, id, nombreArchivo);
 
-        res.json({
-            ok: true, 
-            msg: 'Archivo subido', 
-            nombreArchivo
-        })
+        // res.json({
+        //     ok: true, 
+        //     msg: 'Archivo subido', 
+        //     nombreArchivo
+        // })
     })
 
     // cloudinary.uploader.upload(file.tempFilePath, {public_id: `Causa/empresa/${nombreArchivo}`, tags: `blog`}, 

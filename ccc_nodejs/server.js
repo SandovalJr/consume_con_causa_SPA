@@ -1,4 +1,5 @@
 let express = require("express");
+const fileUpload = require('express-fileupload');
 let cors = require("cors");
 let bodyParser = require("body-parser");
 let app = express();
@@ -12,6 +13,8 @@ app.use(cors());
 //         extended: false
 //     })
 // );
+
+// app.use(fileUpload({ useTempFiles: true }));
 
 // Middlewares
 app.use(morgan("dev"));
