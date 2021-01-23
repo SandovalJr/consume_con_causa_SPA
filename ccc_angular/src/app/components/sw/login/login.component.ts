@@ -34,6 +34,10 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl(
             `/cliente/${resp.datos.id_cliente}/Inicio_Cliente/${resp.datos.id_cliente}`
           );
+        }else if(resp.tipo == "admin"){
+          this.router.navigateByUrl(
+            `/AdministradorCCC/Inicio_Administrador`
+          );
         } else if (!resp.datos.status) {
           Swal.fire("Empresa no validada", "Espere validacion", "warning");
         } else {

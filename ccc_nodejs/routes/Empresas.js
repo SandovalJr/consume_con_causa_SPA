@@ -157,7 +157,11 @@ empresas.post("/login", async (req, res = response) => {
           msg: "Correo Erroneo",
         });
       } else {
-        tipo = "cliente";
+        if(usuarioDB.admin === 1){
+          tipo = 'admin';
+        }else{
+          tipo = "cliente";
+        }
       }
     } else {
       tipo = "empresa";
