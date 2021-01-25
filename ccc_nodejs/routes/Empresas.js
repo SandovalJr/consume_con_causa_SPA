@@ -157,7 +157,8 @@ empresas.post("/login", async (req, res = response) => {
           msg: "Correo Erroneo",
         });
       } else {
-        if(usuarioDB.admin === 1){
+        console.log(usuarioDB);
+        if(usuarioDB.admin == 1){
           tipo = 'admin';
         }else{
           tipo = "cliente";
