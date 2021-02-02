@@ -37,6 +37,7 @@ import { InicioEmpresaComponent } from "../components/sw/usertypes/empresa/inici
 // GENERAL
 import { EditarinfoEmpresaComponent } from "../components/sw/usertypes/admin/listEmpresas/editarinfo-empresa/editarinfo-empresa.component";
 import { VerInfoEmpresaComponent } from "../components/sw/usertypes/admin/listEmpresas/ver-info-empresa/ver-info-empresa.component";
+import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
   { path: "", component: SpaComponent },
@@ -107,11 +108,15 @@ const routes: Routes = [
   {
     path: "empresa/:id",
     component: EmpresaComponent,
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
     children: [{ path: "Inicio_Empresa/:id", component: InicioEmpresaComponent }],
   },
   {
     path: "cliente/:id_cliente",
     component: ClienteComponent,
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
     children: [
       { path: "Inicio_Cliente/:id_cliente", component: InicioClienteComponent },
       {

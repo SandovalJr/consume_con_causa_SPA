@@ -13,6 +13,9 @@ const fs = require("fs");
 const path = require("path");
 
 const cloudinary = require("cloudinary").v2;
+const { generaJWT } = require("../helpers/jwt");
+const { validarJWT } = require("../middleware/validar-JWT");
+const { renewToken } = require("../controllers/auth");
 cloudinary.config({
   cloud_name: "wolf-code",
   api_key: "622561925972199",
@@ -179,12 +182,18 @@ empresas.post("/login", async (req, res = response) => {
       });
     }
 
+    let token;
+
     // Aqui va el token
+    if(usuarioDB.status){
+      token = await generaJWT(usuarioDB.correo);
+    }
 
     res.json({
       ok: true,
       tipo,
       datos: usuarioDB,
+      token
     });
   } catch (error) {
     console.log(error);
@@ -335,5 +344,7 @@ empresas.put("/ActEmpresaConPassword/:id_empresa", (req, res) => {
       res.status(500).json(error);
     });
 });
+
+empresas.get('/renew', validarJWT, renewToken);
 
 module.exports = empresas;

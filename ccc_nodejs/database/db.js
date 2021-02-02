@@ -1,7 +1,7 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
 const db = {};
-// const sequelize = new Sequelize("consume_con_causa", "root", "root2020", {
-const sequelize = new Sequelize("consume_con_causa", "root", "", {
+const sequelize = new Sequelize("consume_con_causa", "root", "root2020", {
+//const sequelize = new Sequelize("consume_con_causa", "root", "", {
   //Pass Local root2020
   host: "localhost",
   dialect: "mysql",
